@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @shankargowdambn
 - 👀 I’m interested in Cloud Architectures
-- 🌱 I’m currently learning Cloud Platform, Kubernetes, Promethous, Elastic Search, Helm, SpringBoot, Java, Python
+- 🌱 I’m currently learning Cloud Platform, Kubernetes, Prometheus, ElasticSearch, Helm, SpringBoot, Java, Python
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me shankar.gowda.mbn@gmail.com
 

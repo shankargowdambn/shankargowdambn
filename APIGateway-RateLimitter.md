@@ -12,7 +12,7 @@ Cloud microservices [4] have become widely popular and rate limiting is usually 
 
 For example,
 Twitter limits the number of tweets to 300 per 3 hours [2].
-Google docs APIs have the following default limit: 300 per user per 60 seconds for read requests [3].
+Google Docs APIs have the following default limit: 300 per user per 60 seconds for read requests [3].
 
 A rate limiter prevents DoS attacks, either intentional or unintentional, by blocking the excess calls.
 

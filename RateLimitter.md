@@ -8,7 +8,7 @@ Prevent resource starvation caused by Denial of Service (DoS) attack [1].
 
  Almost all APIs published by large tech companies enforce some form of rate limiting. For example, Twitter limits the number of tweets to 300 per 3 hours [2].
 
- Google docs APIs have the following default limit: 300 per user per 60 seconds for read requests [3].
+ Google Docs APIs have the following default limit: 300 per user per 60 seconds for read requests [3].
 
 A rate limiter prevents DoS attacks, either intentional or unintentional, by blocking the excess calls
 
@@ -515,7 +515,7 @@ if __name__ == "__main__":
 
 ## HTTP-style response (with status code 429 Too Many Requests) whenever a request is denied
 
-Add a http_response() helper to the base RateLimiter that returns a dict with:
+Add http_response() helper to the base RateLimiter that returns a dict with:
 
 status → HTTP status code (200 if allowed, 429 if limited)
 
