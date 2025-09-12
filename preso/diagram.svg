@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <style>
+    .mono { font-family: monospace; font-size:12px; white-space:pre; }
+    .title { font-family: Arial; font-size:16px; font-weight:bold; }
+  </style>
+  <rect width="100%" height="100%" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="20" y="30" class="title">ScyllaDB + Agentic AI Reference Architecture (Mermaid source preview)</text>
+  <foreignObject x="20" y="50" width="1160" height="720">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="mono">
+flowchart LR
+  subgraph Ingress[Clients &amp; External Systems]
+    C1[Web / Mobile / IoT]
+    C2[3rd-party APIs]
+    C3[n8n Workflows]
+  end
+
+  subgraph Ingestion[Edge &amp; Ingest]
+    LB[Load Balancer / API Gateway]\n(mTLS, rate limit)
+    GRPC_in[gRPC 2.0 Frontend]
+    HTTP_in[REST / GraphQL]
+  end
+
+  subgraph Messaging[Event Backbone &amp; Task Queues]
+    K[Kafka — Event Backbone]
+    R[RabbitMQ — Task Queues]
+    CDC[Scylla CDC -> Kafka]
+  end
+
+  subgraph Processing[Stream &amp; Batch Processing]
+    Spark_stream[Spark Structured Streaming]
+    Flink[Flink / Custom Stream Processors]
+  end
+
+  subgraph Agents[Agentic AI Layer]
+    Orchestrator[Agent Orchestrator]
+    AgentA[Agent A]
+    AgentB[Agent B]
+    A2A[A2A Mesh (gRPC 2.0)]
+  end
+
+  subgraph Storage[State &amp; Serving]
+    Scylla[ScyllaDB Cluster]
+    Blob[Object Store (S3) for models &amp; artifacts]
+    Redis[Redis / Cache]
+  end
+
+  subgraph HIL[Human-in-the-Loop]
+    UI[Operator Console]
+    ReviewSvc[Review Service]
+  end
+
+  subgraph Orchestration[Kubernetes / K8s]
+    K8s[Kubernetes Cluster]
+  end
+
+  C1 --> LB
+  C2 --> LB
+  C3 --> LB
+  LB -->|gRPC/HTTP| GRPC_in
+  LB --> HTTP_in
+
+  GRPC_in --> K
+  GRPC_in --> R
+  HTTP_in --> K
+  HTTP_in --> R
+  CDC --> K
+
+  K --> Spark_stream
+  K --> Flink
+  R --> Spark_stream
+  R --> Flink
+  Spark_stream --> Scylla
+  Flink --> Scylla
+
+  Scylla --> CDC
+  CDC --> K
+
+  K --> Orchestrator
+  R --> Orchestrator
+  Orchestrator --> AgentA
+  Orchestrator --> AgentB
+  AgentA ---|gRPC 2.0 (A2A)| A2A
+  AgentB ---|gRPC 2.0 (A2A)| A2A
+  A2A -->|peer calls| AgentA
+
+  AgentA --> Scylla
+  AgentB --> Scylla
+  AgentA --> Blob
+  AgentB --> Blob
+
+  Operator Console --> ReviewSvc
+  ReviewSvc --> Orchestrator
+  ReviewSvc --> Scylla
+
+  n8n_((n8n)) --- K
+  n8n_ --> R
+  n8n_ --> Orchestrator
+  n8n_ --> ReviewSvc
+
+  subgraph Observability[Monitoring &amp; Security]
+    Prom[Prometheus + Grafana]
+    Jaeger[Tracing (Jaeger/Tempo)]
+    Vault[Secrets (HashiCorp Vault)]
+  end
+
+  K8s --> Prom
+  K8s --> Jaeger
+  K8s --> Vault
+  Scylla --> Prom
+  AgentA --> Jaeger
+  AgentB --> Jaeger
+</div>
+  </foreignObject>
+</svg>

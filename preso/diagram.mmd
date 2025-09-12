@@ -1,0 +1,106 @@
+```mermaid
+
+flowchart LR
+  subgraph Ingress[Clients & External Systems]
+    C1[Web / Mobile / IoT]
+    C2[3rd-party APIs]
+    C3[n8n Workflows]
+  end
+
+  subgraph Ingestion[Edge & Ingest]
+    LB[Load Balancer / API Gateway]\n(mTLS, rate limit)
+    GRPC_in[gRPC 2.0 Frontend]
+    HTTP_in[REST / GraphQL]
+  end
+
+  subgraph Messaging[Event Backbone & Task Queues]
+    K[Kafka — Event Backbone]
+    R[RabbitMQ — Task Queues]
+    CDC[Scylla CDC -> Kafka]
+  end
+
+  subgraph Processing[Stream & Batch Processing]
+    Spark_stream[Spark Structured Streaming]
+    Flink[Flink / Custom Stream Processors]
+  end
+
+  subgraph Agents[Agentic AI Layer]
+    Orchestrator[Agent Orchestrator]
+    AgentA[Agent A]
+    AgentB[Agent B]
+    A2A[A2A Mesh (gRPC 2.0)]
+  end
+
+  subgraph Storage[State & Serving]
+    Scylla[ScyllaDB Cluster]
+    Blob[Object Store (S3) for models & artifacts]
+    Redis[Redis / Cache]
+  end
+
+  subgraph HIL[Human-in-the-Loop]
+    UI[Operator Console]
+    ReviewSvc[Review Service]
+  end
+
+  subgraph Orchestration[Kubernetes / K8s]
+    K8s[Kubernetes Cluster]
+  end
+
+  C1 --> LB
+  C2 --> LB
+  C3 --> LB
+  LB -->|gRPC/HTTP| GRPC_in
+  LB --> HTTP_in
+
+  GRPC_in --> K
+  GRPC_in --> R
+  HTTP_in --> K
+  HTTP_in --> R
+  CDC --> K
+
+  K --> Spark_stream
+  K --> Flink
+  R --> Spark_stream
+  R --> Flink
+  Spark_stream --> Scylla
+  Flink --> Scylla
+
+  Scylla --> CDC
+  CDC --> K
+
+  K --> Orchestrator
+  R --> Orchestrator
+  Orchestrator --> AgentA
+  Orchestrator --> AgentB
+  AgentA ---|gRPC 2.0 (A2A)| A2A
+  AgentB ---|gRPC 2.0 (A2A)| A2A
+  A2A -->|peer calls| AgentA
+
+  AgentA --> Scylla
+  AgentB --> Scylla
+  AgentA --> Blob
+  AgentB --> Blob
+
+  Operator Console --> ReviewSvc
+  ReviewSvc --> Orchestrator
+  ReviewSvc --> Scylla
+
+  n8n_((n8n)) --- K
+  n8n_ --> R
+  n8n_ --> Orchestrator
+  n8n_ --> ReviewSvc
+
+  subgraph Observability[Monitoring & Security]
+    Prom[Prometheus + Grafana]
+    Jaeger[Tracing (Jaeger/Tempo)]
+    Vault[Secrets (HashiCorp Vault)]
+  end
+
+  K8s --> Prom
+  K8s --> Jaeger
+  K8s --> Vault
+  Scylla --> Prom
+  AgentA --> Jaeger
+  AgentB --> Jaeger
+
+```

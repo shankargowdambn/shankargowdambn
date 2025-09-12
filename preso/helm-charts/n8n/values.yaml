@@ -1,0 +1,8 @@
+replicaCount: 1
+image:
+  repository: n8nio/n8n
+  tag: 1.68.0
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 5678

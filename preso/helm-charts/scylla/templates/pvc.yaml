@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: { { include "scylla.fullname" . } }
+  labels:
+    app.kubernetes.io/name: { { include "scylla.fullname" . } }
+    helm.sh/chart: { { include "scylla.fullname" . } }
+spec:
+  accessModes:
+    - { { .Values.pvc.accessMode } } # Configurable access mode
+  resources:
+    requests:
+      storage: { { .Values.pvc.storageSize } } # Configurable storage size
+  storageClassName: { { .Values.pvc.storageClassName } }

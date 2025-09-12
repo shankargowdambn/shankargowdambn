@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  repository: rabbitmq
+  tag: 3.12-management
+  pullPolicy: IfNotPresent
+service:
+  type: ClusterIP
+  port: 5672
+managementPort: 15672

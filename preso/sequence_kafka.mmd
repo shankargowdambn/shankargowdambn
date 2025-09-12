@@ -1,0 +1,27 @@
+```mermaid
+
+sequenceDiagram
+    participant Client
+    participant API as API Gateway (gRPC)
+    participant Kafka
+    participant Spark as Spark Stream Processor
+    participant Scylla
+    participant Orchestrator
+    participant Agent
+    participant HIL as Human-in-the-Loop
+
+    Client->>API: Send event (gRPC)
+    API->>Kafka: Publish event
+    Kafka->>Spark: Stream event
+    Spark->>Scylla: Write enriched features
+    Orchestrator->>Scylla: Query recent state
+    Orchestrator->>Agent: Assign decision task
+    Agent->>Scylla: Fetch context
+    Agent->>Orchestrator: Return decision
+    alt Decision uncertain
+        Orchestrator->>HIL: Request human review
+        HIL->>Orchestrator: Approve/Reject/Adjust
+    end
+    Orchestrator->>Client: Final action/response
+
+```

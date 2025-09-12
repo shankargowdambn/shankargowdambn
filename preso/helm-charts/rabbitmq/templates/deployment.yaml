@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: { { include "rabbitmq.fullname" . } }
+spec:
+  replicas: { { .Values.replicaCount } }
+  selector:
+    matchLabels:
+      app: { { include "rabbitmq.name" . } }
+  template:
+    metadata:
+      labels:
+        app: { { include "rabbitmq.name" . } }
+    spec:
+      containers:
+        - name: rabbitmq
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: { { .Values.service.port } }
+            - containerPort: { { .Values.managementPort } }

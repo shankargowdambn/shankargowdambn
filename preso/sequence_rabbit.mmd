@@ -1,0 +1,19 @@
+```mermaid
+
+sequenceDiagram
+    participant Client
+    participant API as API Gateway (gRPC)
+    participant R as RabbitMQ (Task Queue)
+    participant Orchestrator
+    participant Agent
+    participant Scylla
+
+    Client->>API: Submit task (gRPC)
+    API->>R: Publish task message
+    R->>Orchestrator: Deliver task
+    Orchestrator->>Agent: Assign task via RPC
+    Agent->>Scylla: Read/write state
+    Agent->>Orchestrator: Return result
+    Orchestrator->>Client: Acknowledge completion
+
+```

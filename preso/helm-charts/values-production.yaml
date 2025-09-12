@@ -1,0 +1,150 @@
+# Shared defaults
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: "2"
+    memory: "4Gi"
+  limits:
+    cpu: "4"
+    memory: "8Gi"
+
+persistence:
+  enabled: true
+  size: 100Gi
+  storageClass: fast-disks
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: http
+  initialDelaySeconds: 30
+  periodSeconds: 10
+readinessProbe:
+  httpGet:
+    path: /ready
+    port: http
+  initialDelaySeconds: 15
+  periodSeconds: 5
+
+nodeSelector:
+  role: workload
+
+tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "workloads"
+    effect: "NoSchedule"
+
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - scylla
+          topologyKey: "kubernetes.io/hostname"
+
+scylla:
+  replicaCount: 5
+  persistence:
+    size: 500Gi
+  resources:
+    requests:
+      cpu: "4"
+      memory: "16Gi"
+    limits:
+      cpu: "8"
+      memory: "32Gi"
+
+kafka:
+  replicaCount: 5
+  persistence:
+    size: 1000Gi
+  resources:
+    requests:
+      cpu: "4"
+      memory: "16Gi"
+    limits:
+      cpu: "8"
+      memory: "32Gi"
+  service:
+    type: ClusterIP
+    port: 9092
+
+rabbitmq:
+  replicaCount: 2
+  persistence:
+    size: 200Gi
+  resources:
+    requests:
+      cpu: "2"
+      memory: "8Gi"
+    limits:
+      cpu: "4"
+      memory: "16Gi"
+  service:
+    type: ClusterIP
+    port: 5672
+  managementPort: 15672
+
+agent:
+  replicaCount: 4
+  resources:
+    requests:
+      cpu: "1"
+      memory: "2Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+  autoscaling:
+    enabled: true
+    minReplicas: 4
+    maxReplicas: 20
+    targetCPUUtilizationPercentage: 70
+
+orchestrator:
+  replicaCount: 3
+  resources:
+    requests:
+      cpu: "1"
+      memory: "2Gi"
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+
+n8n:
+  replicaCount: 2
+  persistence:
+    size: 50Gi
+  resources:
+    requests:
+      cpu: "500m"
+      memory: "1Gi"
+    limits:
+      cpu: "1"
+      memory: "2Gi"
+
+spark:
+  master:
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: "2"
+        memory: "8Gi"
+      limits:
+        cpu: "4"
+        memory: "16Gi"
+  worker:
+    replicaCount: 4
+    resources:
+      requests:
+        cpu: "2"
+        memory: "8Gi"
+      limits:
+        cpu: "4"
+        memory: "16Gi"
