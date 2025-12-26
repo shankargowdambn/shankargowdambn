@@ -8,6 +8,7 @@ I am actively exploring opportunities to contribute at a **Senior Manager / Head
 - Mentor leaders and engineers while building sustainable, execution-focused cultures
 
 I am particularly interested in roles that demand **hands-on architectural depth combined with strategic leadership**, across enterprise-scale or fast-growing technology organizations.
+
 ## 👀 About Me
 I am a **Solution / Cloud Architect** with **24+ years of experience** designing and delivering large-scale, distributed, cloud-native platforms across global regions. look  
 My work spans **Cloud Architecture, DevOps, Platform Engineering, AI/ML, GenAI, and Software Development**, with a strong focus on **scalability, reliability, security, and cost optimization**.
@@ -15,6 +16,30 @@ My work spans **Cloud Architecture, DevOps, Platform Engineering, AI/ML, GenAI, 
 I have led globally distributed engineering teams, architected mission-critical systems, and driven end-to-end delivery from concept to production for enterprise-scale platforms.
 
 ---
+## 📜 Certifications & Professional Education
+
+🎓 **Architecture & Cloud**
+- 🏛️ TOGAF® 8 Certified Enterprise Architect – *The Open Group*
+- ☁️ AWS Cloud Practitioner Essentials – *Amazon Web Services*
+
+🤖 **AI / ML / Generative AI**
+- 🧠 Generative AI & LLMs – *Indian Institute of Management Bangalore (IIMB)*
+- 🤖 Generative AI for Everyone – *DeepLearning.AI*
+- 📊 Supervised Learning: Regression & Classification – *DeepLearning.AI*
+- 🔍 Unsupervised Learning, Recommenders & Reinforcement Learning – *DeepLearning.AI*
+- 🧬 Machine Learning – *Stanford University*
+
+📈 **Management & Leadership**
+- 🧭 Principles of Management – *Johns Hopkins University*
+- 👥 Management Skills for New Managers – *Starweaver*
+
+🗄️ **Databases & Platforms**
+- 🍃 MongoDB for Node.js Developers (M101JS) – *MongoDB University*
+- 🟥 Red Hat Enterprise Virtualization – *Red Hat*
+
+💻 **Programming & Enterprise Systems**
+- ☕ Sun Certified Programmer for Java (SCJP) – *Sun Microsystems*
+- 🗃️ Oracle SQL & PL/SQL, Oracle Forms & Reports – *Oracle Corporation*
 
 ## 🌱 Currently Learning & Exploring
 - Advanced **Cloud Platform Architectures**
