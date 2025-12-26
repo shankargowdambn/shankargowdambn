@@ -19,19 +19,33 @@ I have led globally distributed engineering teams, architected mission-critical 
 ## 📜 Certifications & Professional Education
 
 🎓 **Architecture & Cloud**
+![TOGAF](https://img.shields.io/badge/TOGAF®_8-Enterprise_Architecture-0052CC?style=flat-square)
+![AWS](https://img.shields.io/badge/AWS-Cloud_Practitioner-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-OCI-F80000?style=flat-square&logo=oracle&logoColor=white)
+
 - 🏛️ TOGAF® 8 Certified Enterprise Architect – *The Open Group*
 - ☁️ AWS Cloud Practitioner Essentials – *Amazon Web Services*
+- **Oracle Cloud Infrastructure (OCI)** – Architecture & Platform Delivery
 
 ### ⚙️ 📊 IT Service Management, Agile & Quality
+![ITIL](https://img.shields.io/badge/ITIL®_v4-Service_Management-7B1FA2?style=flat-square)
+![Scrum](https://img.shields.io/badge/Scrum-Certified_Scrum_Master-009688?style=flat-square&logo=scrumalliance&logoColor=white)
+![Six Sigma](https://img.shields.io/badge/Lean_Six_Sigma-Green_Belt-4CAF50?style=flat-square)
+
 - 🧩 **ITIL® v4 Foundation Certification** – IT Service Management  
 - 🔁 **Certified Scrum Master (CSM)** – Agile & Scrum Framework  
 - 📈 **Lean Six Sigma Green Belt** – Process Excellence & Continuous Improvement  
 
 📈 **Management & Leadership**
+![Leadership](https://img.shields.io/badge/Leadership-Management-3F51B5?style=flat-square)
+
 - 🧭 Principles of Management – *Johns Hopkins University*
 - 👥 Management Skills for New Managers – *Starweaver*
   
 🤖 **AI / ML / Generative AI**
+![GenAI](https://img.shields.io/badge/Generative_AI-LLMs-FF6F00?style=flat-square)
+![ML](https://img.shields.io/badge/Machine_Learning-Stanford-8C1515?style=flat-square)
+
 - 🧠 Generative AI & LLMs – *Indian Institute of Management Bangalore (IIMB)*
 - 🤖 Generative AI for Everyone – *DeepLearning.AI*
 - 📊 Supervised Learning: Regression & Classification – *DeepLearning.AI*
@@ -39,10 +53,16 @@ I have led globally distributed engineering teams, architected mission-critical 
 - 🧬 Machine Learning – *Stanford University*
 
 🗄️ **Databases & Platforms**
+![MongoDB](https://img.shields.io/badge/MongoDB-University-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![RedHat](https://img.shields.io/badge/Red_Hat-Virtualization-EE0000?style=flat-square&logo=redhat&logoColor=white)
+
 - 🍃 MongoDB for Node.js Developers (M101JS) – *MongoDB University*
 - 🟥 Red Hat Enterprise Virtualization – *Red Hat*
 
 💻 **Programming & Enterprise Systems**
+![Java](https://img.shields.io/badge/Java-SCJP-ED8B00?style=flat-square&logo=java&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-SQL_%26_PL/SQL-F80000?style=flat-square&logo=oracle&logoColor=white)
+
 - ☕ Sun Certified Programmer for Java (SCJP) – *Sun Microsystems*
 - 🗃️ Oracle SQL & PL/SQL, Oracle Forms & Reports – *Oracle Corporation*
 
