@@ -87,7 +87,7 @@ I have led globally distributed engineering teams, architected mission-critical 
 ## 🏗️ Professional Highlights
 - Architected and operated platforms supporting **400+ internal customers** and **1M+ automated jobs/week**
 - Delivered **Agentic AI & RAG chatbots**, reducing live customer interactions by **60%**
-- Achieved **99.9% deployment success rate** through mature CI/CD & DevSecOps pipelines
+- Achieved **99.999% deployment success rate** through mature CI/CD & DevSecOps pipelines
 - Reduced cloud costs by **40%** using Kubernetes autoscaling and FinOps practices
 - Led vulnerability remediation achieving **90% SLA compliance**
 - Mentored and scaled high-performing global engineering teams
