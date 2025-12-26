@@ -22,16 +22,21 @@ I have led globally distributed engineering teams, architected mission-critical 
 - 🏛️ TOGAF® 8 Certified Enterprise Architect – *The Open Group*
 - ☁️ AWS Cloud Practitioner Essentials – *Amazon Web Services*
 
+### ⚙️ 📊 IT Service Management, Agile & Quality
+- 🧩 **ITIL® v4 Foundation Certification** – IT Service Management  
+- 🔁 **Certified Scrum Master (CSM)** – Agile & Scrum Framework  
+- 📈 **Lean Six Sigma Green Belt** – Process Excellence & Continuous Improvement  
+
+📈 **Management & Leadership**
+- 🧭 Principles of Management – *Johns Hopkins University*
+- 👥 Management Skills for New Managers – *Starweaver*
+  
 🤖 **AI / ML / Generative AI**
 - 🧠 Generative AI & LLMs – *Indian Institute of Management Bangalore (IIMB)*
 - 🤖 Generative AI for Everyone – *DeepLearning.AI*
 - 📊 Supervised Learning: Regression & Classification – *DeepLearning.AI*
 - 🔍 Unsupervised Learning, Recommenders & Reinforcement Learning – *DeepLearning.AI*
 - 🧬 Machine Learning – *Stanford University*
-
-📈 **Management & Leadership**
-- 🧭 Principles of Management – *Johns Hopkins University*
-- 👥 Management Skills for New Managers – *Starweaver*
 
 🗄️ **Databases & Platforms**
 - 🍃 MongoDB for Node.js Developers (M101JS) – *MongoDB University*
