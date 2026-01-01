@@ -10,7 +10,7 @@ I am actively exploring opportunities to contribute at a **Senior Manager / Head
 I am particularly interested in roles that demand **hands-on architectural depth combined with strategic leadership**, across enterprise-scale or fast-growing technology organizations.
 
 ## 👀 About Me
-I am a **Solution / Cloud Architect** with **24+ years of experience** designing and delivering large-scale, distributed, cloud-native platforms across global regions. look  
+I am a **Solution / Cloud Architect** with **25+ years of experience** designing and delivering large-scale, distributed, cloud-native platforms across global regions. look  
 My work spans **Cloud Architecture, DevOps, Platform Engineering, AI/ML, GenAI, and Software Development**, with a strong focus on **scalability, reliability, security, and cost optimization**.
 
 I have led globally distributed engineering teams, architected mission-critical systems, and driven end-to-end delivery from concept to production for enterprise-scale platforms.
