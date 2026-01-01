@@ -15,6 +15,8 @@ My work spans **Cloud Architecture, DevOps, Platform Engineering, AI/ML, GenAI, 
 
 I have led globally distributed engineering teams, architected mission-critical systems, and driven end-to-end delivery from concept to production for enterprise-scale platforms.
 
+<img width="837" height="530" alt="image" src="https://github.com/user-attachments/assets/1ddad11d-1b63-4995-8307-9446fc0c6a35" />
+
 ---
 ## 📜 Certifications & Professional Education
 
