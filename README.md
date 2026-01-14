@@ -140,6 +140,15 @@ Beyond technology, I am deeply interested in:
 
 ---
 
+## 🎓 Education Qualification
+
+**Post Graduate Diploma in Management (Finance & CRM)**  
+- (March 2016) Symbiosis Centre for Distance Learning, Pune, Maharashtra, India 
+
+**Bachelor of Engineering (Electronics & Communications)**  
+- (March 2000) Bangalore University – Siddaganga Institute Of Technology, Tumkur, Karnataka, India  
+  
+
 ## 📫 How to Reach Me
 - 📧 Email: **shankar.gowda.mbn@gmail.com**
 - 📞 Phone: **+91 99725 44226**
